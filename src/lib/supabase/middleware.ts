@@ -13,7 +13,7 @@ export async function updateSession(request: NextRequest) {
           return request.cookies.getAll();
         },
         setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value, options }) =>
+          cookiesToSet.forEach(({ name, value }) =>
             request.cookies.set(name, value)
           );
           supabaseResponse = NextResponse.next({ request });
@@ -30,30 +30,43 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // Redireciona para login se não autenticado e tentando acessar área protegida
-  if (!user && request.nextUrl.pathname.startsWith('/leads')) {
+  const pathname = request.nextUrl.pathname;
+
+  // ─── Rotas protegidas — redireciona para login se não autenticado ───
+  const protectedPaths = ['/leads', '/templates', '/analytics', '/agenda', '/import', '/settings'];
+  const isProtected = protectedPaths.some((p) => pathname.startsWith(p));
+
+  if (!user && isProtected) {
     const url = request.nextUrl.clone();
     url.pathname = '/login';
     return NextResponse.redirect(url);
   }
 
-  if (!user && request.nextUrl.pathname.startsWith('/templates')) {
-    const url = request.nextUrl.clone();
-    url.pathname = '/login';
-    return NextResponse.redirect(url);
-  }
-
-  if (!user && request.nextUrl.pathname.startsWith('/analytics')) {
-    const url = request.nextUrl.clone();
-    url.pathname = '/login';
-    return NextResponse.redirect(url);
-  }
-
-  // Redireciona para leads se já autenticado e tentando acessar login/registro
-  if (user && (request.nextUrl.pathname === '/login' || request.nextUrl.pathname === '/registro')) {
+  // ─── Redireciona usuário autenticado que tenta acessar login/registro ───
+  if (user && (pathname === '/login' || pathname === '/registro')) {
     const url = request.nextUrl.clone();
     url.pathname = '/leads';
     return NextResponse.redirect(url);
+  }
+
+  // ─── Verifica status de acesso do usuário autenticado ───
+  if (user && isProtected) {
+    try {
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('access_status')
+        .eq('auth_uid', user.id)
+        .single();
+
+      const blockedStatuses = ['PAUSADO', 'SUSPENSO', 'CANCELADO'];
+      if (profile && blockedStatuses.includes(profile.access_status)) {
+        const url = request.nextUrl.clone();
+        url.pathname = '/acesso-suspenso';
+        return NextResponse.redirect(url);
+      }
+    } catch {
+      // Se falhar ao verificar status, permite continuar (não bloqueia por erro de rede)
+    }
   }
 
   return supabaseResponse;
