@@ -6,7 +6,7 @@ import { LeadsTableWrapper } from '@/features/leads/LeadsTableWrapper';
 import { LeadFilters } from '@/features/leads/LeadFilters';
 
 export const metadata = {
-  title: 'Leads – LimpaLeads',
+  title: 'Leads – LeadFlowPro',
   description: 'Gerencie seus contatos comerciais',
 };
 
@@ -37,7 +37,7 @@ export default async function LeadsPage({ searchParams }: LeadsPageProps) {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-            <div className="w-10 h-10 bg-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
+            <div className="w-10 h-10 bg-gold-600 rounded-2xl flex items-center justify-center shadow-lg shadow-gold-500/20">
               <Users className="w-5 h-5 text-white" />
             </div>
             Leads
@@ -63,7 +63,7 @@ export default async function LeadsPage({ searchParams }: LeadsPageProps) {
           {/* Tabela Interativa e Wrapper */}
           <Suspense fallback={
             <div className="bg-white rounded-2xl border border-slate-200 h-64 flex items-center justify-center">
-              <Loader2 className="w-8 h-8 animate-spin text-indigo-600" />
+              <Loader2 className="w-8 h-8 animate-spin text-gold-600" />
             </div>
           }>
             <LeadsTableWrapper

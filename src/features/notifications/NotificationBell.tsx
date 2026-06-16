@@ -63,10 +63,10 @@ export function NotificationBell() {
   return (
     <DropdownMenu onOpenChange={(open) => open && loadNotifications()}>
       <DropdownMenuTrigger asChild>
-        <button className="relative p-2.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-400 dark:hover:border-indigo-600 transition-all group active:scale-95">
+        <button className="relative p-2.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-gold-400 dark:hover:border-gold-600 transition-all group active:scale-95">
           <Bell className={cn(
             "w-5 h-5 transition-colors",
-            unreadCount > 0 ? "text-rose-500 animate-[bell-swing_2s_infinite]" : "text-slate-400 group-hover:text-indigo-600 shadow-indigo-100"
+            unreadCount > 0 ? "text-rose-500 animate-[bell-swing_2s_infinite]" : "text-slate-400 group-hover:text-gold-600 shadow-gold-100"
           )} />
           
           <AnimatePresence>
@@ -112,7 +112,7 @@ export function NotificationBell() {
           ) : (
             <div className="divide-y divide-slate-50 dark:divide-slate-800/50">
               {notifications.map((notif) => (
-                <DropdownMenuItem key={notif.id} asChild className="p-4 cursor-pointer focus:bg-indigo-50 dark:focus:bg-indigo-950 transition-colors">
+                <DropdownMenuItem key={notif.id} asChild className="p-4 cursor-pointer focus:bg-gold-50 dark:focus:bg-gold-950 transition-colors">
                   <div className="relative group/item">
                     <Link href="/agenda" className="flex items-start gap-3 pr-8">
                       <div className={cn(
@@ -137,7 +137,7 @@ export function NotificationBell() {
                     {!notif.isRead && (
                       <button 
                         onClick={(e) => handleMarkAsRead(notif.id, e)}
-                        className="absolute right-4 top-4 p-1.5 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 opacity-0 group-hover/item:opacity-100 transition-all"
+                        className="absolute right-4 top-4 p-1.5 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-400 hover:text-gold-600 dark:hover:text-gold-400 opacity-0 group-hover/item:opacity-100 transition-all"
                         title="Marcar como lida"
                       >
                         <Check className="w-3.5 h-3.5" />
@@ -154,7 +154,7 @@ export function NotificationBell() {
         
         <Link 
           href="/agenda" 
-          className="flex items-center justify-center gap-2 p-4 text-xs font-black text-indigo-600 dark:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors uppercase tracking-widest"
+          className="flex items-center justify-center gap-2 p-4 text-xs font-black text-gold-600 dark:text-gold-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors uppercase tracking-widest"
         >
           Ver Agenda Completa
           <ChevronRight className="w-3 h-3" />

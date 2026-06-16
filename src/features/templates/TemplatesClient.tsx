@@ -47,7 +47,7 @@ export function TemplatesClient({ templates }: TemplatesClientProps) {
             onClick={() => setFilterChannel('')}
             className={cn(
               'px-4 py-2 rounded-xl text-sm font-semibold transition-colors',
-              filterChannel === '' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'
+              filterChannel === '' ? 'bg-gold-600 text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'
             )}
           >
             Todos
@@ -74,7 +74,7 @@ export function TemplatesClient({ templates }: TemplatesClientProps) {
             onClick={() => setFilterChannel('EMAIL')}
             className={cn(
               'flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-colors',
-              filterChannel === 'EMAIL' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'
+              filterChannel === 'EMAIL' ? 'bg-gold-600 text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'
             )}
           >
             <Mail className="w-3.5 h-3.5" /> E-mail
@@ -83,7 +83,7 @@ export function TemplatesClient({ templates }: TemplatesClientProps) {
 
         <button
           onClick={() => setCreating(true)}
-          className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-all shadow-lg shadow-indigo-500/20"
+          className="flex items-center gap-2 bg-gold-600 hover:bg-gold-700 text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-all shadow-lg shadow-gold-500/20"
         >
           <Plus className="w-4 h-4" />
           Novo Template
@@ -100,7 +100,7 @@ export function TemplatesClient({ templates }: TemplatesClientProps) {
           <p className="text-sm text-slate-400 dark:text-slate-500 mt-1">Crie seu primeiro modelo de mensagem</p>
           <button
             onClick={() => setCreating(true)}
-            className="mt-6 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold px-6 py-2.5 rounded-xl transition-all"
+            className="mt-6 bg-gold-600 hover:bg-gold-700 text-white text-sm font-bold px-6 py-2.5 rounded-xl transition-all"
           >
             Criar Template
           </button>
@@ -148,7 +148,7 @@ export function TemplatesClient({ templates }: TemplatesClientProps) {
                     <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                       <button
                         onClick={() => setEditing(template)}
-                        className="p-2 text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 rounded-xl transition-colors"
+                        className="p-2 text-slate-400 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-gold-50 dark:hover:bg-gold-900/30 rounded-xl transition-colors"
                       >
                         <Pencil className="w-4 h-4" />
                       </button>

@@ -242,23 +242,23 @@ export function ImportWizard() {
     <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 transition-colors">
       {/* HEADER STEPS */}
       <div className="flex items-center gap-4 mb-8 pb-8 border-b border-slate-100 dark:border-slate-800 transition-colors">
-        <div className={`flex items-center justify-center w-10 h-10 rounded-full font-bold transition-colors ${step >= 1 ? 'bg-indigo-600 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500'}`}>1</div>
-        <div className={`flex-1 h-1 rounded-full transition-colors ${step >= 2 ? 'bg-indigo-600' : 'bg-slate-100 dark:bg-slate-800'}`} />
-        <div className={`flex items-center justify-center w-10 h-10 rounded-full font-bold transition-colors ${step >= 2 ? 'bg-indigo-600 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500'}`}>2</div>
-        <div className={`flex-1 h-1 rounded-full transition-colors ${step >= 3 ? 'bg-indigo-600' : 'bg-slate-100 dark:bg-slate-800'}`} />
+        <div className={`flex items-center justify-center w-10 h-10 rounded-full font-bold transition-colors ${step >= 1 ? 'bg-gold-600 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500'}`}>1</div>
+        <div className={`flex-1 h-1 rounded-full transition-colors ${step >= 2 ? 'bg-gold-600' : 'bg-slate-100 dark:bg-slate-800'}`} />
+        <div className={`flex items-center justify-center w-10 h-10 rounded-full font-bold transition-colors ${step >= 2 ? 'bg-gold-600 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500'}`}>2</div>
+        <div className={`flex-1 h-1 rounded-full transition-colors ${step >= 3 ? 'bg-gold-600' : 'bg-slate-100 dark:bg-slate-800'}`} />
         <div className={`flex items-center justify-center w-10 h-10 rounded-full font-bold transition-colors ${step >= 3 ? 'bg-emerald-500 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500'}`}>3</div>
       </div>
 
       {step === 1 && (
         <div className="text-center py-12">
-          <FileSpreadsheet className="w-16 h-16 text-indigo-200 dark:text-indigo-400 mx-auto mb-4" />
+          <FileSpreadsheet className="w-16 h-16 text-gold-200 dark:text-gold-400 mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2">Importar Planilha</h2>
           <p className="text-slate-500 dark:text-slate-400 mb-8 max-w-md mx-auto">
             Faça upload do seu arquivo Excel ou CSV. O lead será importado se possuir pelo menos uma forma de contato (E-mail, Telefone ou LinkedIn).
           </p>
-          <label className="cursor-pointer bg-indigo-50 dark:bg-indigo-950/30 border-2 border-dashed border-indigo-200 dark:border-indigo-900/50 hover:bg-indigo-100 dark:hover:bg-indigo-900/30 transition-colors rounded-2xl p-8 flex flex-col items-center max-w-lg mx-auto">
-            <Upload className="w-8 h-8 text-indigo-500 mb-2" />
-            <span className="text-indigo-700 font-medium">Clique para selecionar ou arraste o arquivo</span>
+          <label className="cursor-pointer bg-gold-50 dark:bg-gold-950/30 border-2 border-dashed border-gold-200 dark:border-gold-900/50 hover:bg-gold-100 dark:hover:bg-gold-900/30 transition-colors rounded-2xl p-8 flex flex-col items-center max-w-lg mx-auto">
+            <Upload className="w-8 h-8 text-gold-500 mb-2" />
+            <span className="text-gold-700 font-medium">Clique para selecionar ou arraste o arquivo</span>
             <input type="file" accept=".xlsx,.xls,.csv" className="hidden" onChange={handleFileUpload} />
           </label>
         </div>
@@ -268,7 +268,7 @@ export function ImportWizard() {
         <div className="space-y-8">
           <div>
             <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2">Mapear Colunas</h2>
-            <p className="text-slate-500 dark:text-slate-400">Relacione as colunas da sua planilha ({columns.length} colunas encontradas) com os dados do LimpaLeads.</p>
+            <p className="text-slate-500 dark:text-slate-400">Relacione as colunas da sua planilha ({columns.length} colunas encontradas) com os dados do LeadFlowPro.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -284,7 +284,7 @@ export function ImportWizard() {
               <div key={key} className="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-2xl border border-slate-100 dark:border-slate-800 transition-colors">
                 <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">{label}</label>
                 <select 
-                  className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 dark:text-slate-200 rounded-xl px-4 py-2.5 outline-none focus:border-indigo-500 transition-colors"
+                  className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 dark:text-slate-200 rounded-xl px-4 py-2.5 outline-none focus:border-gold-500 transition-colors"
                   value={mapping[key]}
                   onChange={e => {
                     setMapping({...mapping, [key]: e.target.value});
@@ -358,7 +358,7 @@ export function ImportWizard() {
                     value={customSource}
                     onChange={(e) => setCustomSource(e.target.value)}
                     placeholder="Ex: Campanha Cold Email"
-                    className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                    className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
                   />
                 </div>
 
@@ -366,7 +366,7 @@ export function ImportWizard() {
                   <button 
                     onClick={handleSubmit}
                     disabled={validation.validLeads.length === 0 || processing}
-                    className="bg-indigo-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-indigo-700 transition-colors disabled:opacity-50 flex items-center gap-2"
+                    className="bg-gold-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-gold-700 transition-colors disabled:opacity-50 flex items-center gap-2"
                   >
                     {processing ? `Processando ${progress}%...` : `Importar ${validation.validLeads.length} Leads Validados`}
                     {!processing && <ChevronRight className="w-5 h-5" />}
@@ -388,7 +388,7 @@ export function ImportWizard() {
           </p>
           <button 
             onClick={() => router.push('/leads')}
-            className="bg-indigo-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-indigo-700 transition-colors"
+            className="bg-gold-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-gold-700 transition-colors"
           >
             Ir para Lista de Leads
           </button>

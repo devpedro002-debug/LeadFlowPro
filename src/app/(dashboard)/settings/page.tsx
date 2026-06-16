@@ -20,8 +20,8 @@ const CadenceSettings = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: 'Configurações | LimpaLeads',
-  description: 'Configurações do LimpaLeads',
+  title: 'Configurações | LeadFlowPro',
+  description: 'Configurações do LeadFlowPro',
 };
 
 export default async function SettingsPage() {

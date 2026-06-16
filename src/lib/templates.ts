@@ -22,8 +22,9 @@ interface LeadData {
  * {{email}} -> email
  * {{telefone}}, {{phone}} -> phone
  * {{linkedin}}, {{linkedin_url}} -> linkedinUrl
+ * {{operador}}, {{operator}}, {{meunome}} -> operatorName
  */
-const ALIASES: Record<string, keyof LeadData | 'firstName'> = {
+const ALIASES: Record<string, keyof LeadData | 'firstName' | 'operatorName'> = {
   // Nome Completo
   'nome': 'fullName',
   'name': 'fullName',
@@ -45,6 +46,11 @@ const ALIASES: Record<string, keyof LeadData | 'firstName'> = {
   // Social
   'linkedin': 'linkedinUrl',
   'linkedin_url': 'linkedinUrl',
+  // Operador
+  'operador': 'operatorName',
+  'operator': 'operatorName',
+  'meunome': 'operatorName',
+  'meu_nome': 'operatorName',
 };
 
 /**
@@ -52,7 +58,7 @@ const ALIASES: Record<string, keyof LeadData | 'firstName'> = {
  * Se o campo estiver vazio, nulo ou indefinido, a variável é removida (substituída por string vazia).
  * Tratamento robusto via Regex Global para substituir todas as ocorrências de forma atômica.
  */
-export function interpolateTemplate(body: string, lead: LeadData): string {
+export function interpolateTemplate(body: string, lead: LeadData, operatorName?: string): string {
   if (!body || !lead) return '';
 
   // Extração robusta do primeiro nome (trata múltiplos espaços e nulos)
@@ -66,6 +72,7 @@ export function interpolateTemplate(body: string, lead: LeadData): string {
     email: lead.email || '',
     phone: lead.phone || '',
     linkedinUrl: lead.linkedinUrl || '',
+    operatorName: operatorName || '',
   };
 
   /**
@@ -96,7 +103,7 @@ export function interpolateTemplate(body: string, lead: LeadData): string {
  * Verifica se o template contém variáveis cujos campos estão vazios no lead.
  * Útil para exibir alertas visuais na UI.
  */
-export function getMissingFields(body: string, lead: LeadData): string[] {
+export function getMissingFields(body: string, lead: LeadData, operatorName?: string): string[] {
   if (!body || !lead) return [];
 
   const missing: string[] = [];
@@ -110,6 +117,7 @@ export function getMissingFields(body: string, lead: LeadData): string[] {
     email: lead.email || '',
     phone: lead.phone || '',
     linkedinUrl: lead.linkedinUrl || '',
+    operatorName: operatorName || '',
   };
 
   const regex = /{{([\s\S]*?)}}/g;

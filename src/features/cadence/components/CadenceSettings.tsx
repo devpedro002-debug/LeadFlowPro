@@ -98,7 +98,7 @@ export function CadenceSettings({ cadenceId, initialStages, templates }: Cadence
         <div>
           <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
             Fluxo de Cadência Automática
-            <span className="px-2 py-0.5 bg-indigo-50 dark:bg-indigo-950/30 text-indigo-600 dark:text-indigo-400 text-[10px] uppercase font-black rounded-lg tracking-wider border border-indigo-100 dark:border-indigo-800">
+            <span className="px-2 py-0.5 bg-gold-50 dark:bg-gold-950/30 text-gold-600 dark:text-gold-400 text-[10px] uppercase font-black rounded-lg tracking-wider border border-gold-100 dark:border-gold-800">
               Configurável
             </span>
           </h2>
@@ -106,7 +106,7 @@ export function CadenceSettings({ cadenceId, initialStages, templates }: Cadence
         </div>
         <button
           onClick={handleAddStage}
-          className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl text-sm font-bold transition-all shadow-lg shadow-indigo-200 dark:shadow-none"
+          className="flex items-center gap-2 px-4 py-2 bg-gold-600 hover:bg-gold-700 text-white rounded-2xl text-sm font-bold transition-all shadow-lg shadow-gold-200 dark:shadow-none"
         >
           <Plus className="w-4 h-4" />
           Adicionar Estágio
@@ -122,13 +122,13 @@ export function CadenceSettings({ cadenceId, initialStages, templates }: Cadence
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-950/50 rounded-2xl border border-slate-100 dark:border-slate-800 group hover:border-indigo-200 dark:hover:border-indigo-900 transition-all"
+              className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-950/50 rounded-2xl border border-slate-100 dark:border-slate-800 group hover:border-gold-200 dark:hover:border-gold-900 transition-all"
             >
               <div className="flex flex-col gap-1">
                 <button 
                   onClick={() => handleMove(index, 'up')}
                   disabled={index === 0}
-                  className="p-1 text-slate-400 hover:text-indigo-600 disabled:opacity-0 transition-colors"
+                  className="p-1 text-slate-400 hover:text-gold-600 disabled:opacity-0 transition-colors"
                 >
                   <ChevronUp className="w-4 h-4" />
                 </button>
@@ -138,7 +138,7 @@ export function CadenceSettings({ cadenceId, initialStages, templates }: Cadence
                 <button 
                   onClick={() => handleMove(index, 'down')}
                   disabled={index === stages.length - 1}
-                  className="p-1 text-slate-400 hover:text-indigo-600 disabled:opacity-0 transition-colors"
+                  className="p-1 text-slate-400 hover:text-gold-600 disabled:opacity-0 transition-colors"
                 >
                   <ChevronDown className="w-4 h-4" />
                 </button>
@@ -150,7 +150,7 @@ export function CadenceSettings({ cadenceId, initialStages, templates }: Cadence
                   <select
                     value={stage.channel}
                     onChange={(e) => handleUpdateStage(index, { channel: e.target.value as any, templateId: null })}
-                    className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+                    className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-gold-500 outline-none transition-all"
                   >
                     <option value="LINKEDIN">LinkedIn</option>
                     <option value="WHATSAPP">WhatsApp</option>
@@ -167,7 +167,7 @@ export function CadenceSettings({ cadenceId, initialStages, templates }: Cadence
                       min="0"
                       value={stage.delayDays}
                       onChange={(e) => handleUpdateStage(index, { delayDays: parseInt(e.target.value) || 0 })}
-                      className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl pl-10 pr-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+                      className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl pl-10 pr-3 py-2 text-sm focus:ring-2 focus:ring-gold-500 outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -177,7 +177,7 @@ export function CadenceSettings({ cadenceId, initialStages, templates }: Cadence
                   <select
                     value={stage.templateId || ''}
                     onChange={(e) => handleUpdateStage(index, { templateId: e.target.value || null })}
-                    className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+                    className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-gold-500 outline-none transition-all"
                   >
                     <option value="">Sem template</option>
                     {templates
@@ -205,7 +205,7 @@ export function CadenceSettings({ cadenceId, initialStages, templates }: Cadence
           <div className="text-center py-12 border-2 border-dashed border-slate-100 dark:border-slate-800 rounded-3xl">
             <MessageSquare className="w-12 h-12 text-slate-300 mx-auto mb-4" />
             <p className="text-slate-500 font-medium">Nenhum estágio configurado.</p>
-            <button onClick={handleAddStage} className="text-indigo-600 font-bold text-sm mt-2">Clique para adicionar o primeiro</button>
+            <button onClick={handleAddStage} className="text-gold-600 font-bold text-sm mt-2">Clique para adicionar o primeiro</button>
           </div>
         )}
       </div>

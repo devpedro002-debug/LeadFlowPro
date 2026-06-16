@@ -18,7 +18,7 @@ export default function DashboardLoading() {
       </div>
 
       <div className="h-80 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-center">
-        <Loader2 className="w-6 h-6 animate-spin text-indigo-600" />
+        <Loader2 className="w-6 h-6 animate-spin text-gold-600" />
       </div>
     </div>
   );

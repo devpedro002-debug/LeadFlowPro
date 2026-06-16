@@ -92,7 +92,7 @@ export function LeadNotesHistoryModal({
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/50 transition-colors">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center">
+            <div className="w-10 h-10 bg-gold-100 dark:bg-gold-900/30 text-gold-600 dark:text-gold-400 rounded-xl flex items-center justify-center">
               <MessageSquare className="w-5 h-5" />
             </div>
             <div>
@@ -133,7 +133,7 @@ export function LeadNotesHistoryModal({
                     {/* Dot */}
                     <div className={cn(
                       "absolute left-3.5 top-1.5 w-3.5 h-3.5 rounded-full border-2 border-white dark:border-slate-900 z-10 transition-colors",
-                      isSystem ? "bg-slate-300 dark:bg-slate-600" : "bg-indigo-500"
+                      isSystem ? "bg-slate-300 dark:bg-slate-600" : "bg-gold-500"
                     )} />
                     
                     <div className={cn(
@@ -174,13 +174,13 @@ export function LeadNotesHistoryModal({
               onChange={(e) => setNewNote(e.target.value)}
               placeholder="Adicionar rápida anotação..."
               rows={2}
-              className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl pl-4 pr-12 py-3 outline-none focus:border-indigo-500 text-sm text-slate-700 dark:text-slate-200 transition-colors resize-none"
+              className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl pl-4 pr-12 py-3 outline-none focus:border-gold-500 text-sm text-slate-700 dark:text-slate-200 transition-colors resize-none"
               disabled={isSubmitting || isLoading}
             />
             <button
               type="submit"
               disabled={!newNote.trim() || isSubmitting || isLoading || !activeOperator}
-              className="absolute right-2 top-2 p-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl transition-all disabled:opacity-50 shadow-lg shadow-indigo-500/20"
+              className="absolute right-2 top-2 p-2 bg-gold-600 hover:bg-gold-700 text-white rounded-xl transition-all disabled:opacity-50 shadow-lg shadow-gold-500/20"
               title="Salvar nota"
             >
               {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Plus className="w-4 h-4" />}

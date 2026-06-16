@@ -56,14 +56,14 @@ export function OperatorProvider({ children, operators: initialOperators }: Oper
 
   useEffect(() => {
     // 1. Tenta recuperar do localStorage (persistente pelo browser)
-    const storedId = localStorage.getItem('limpaleads_operator_active');
+    const storedId = localStorage.getItem('LeadFlowPro_operator_active');
     if (storedId) {
       const found = localOperators.find(op => op.id === storedId && op.isActive);
       if (found) {
         setActiveOperator(found);
       } else {
-        localStorage.removeItem('limpaleads_operator_active');
-        Cookies.remove('limpaleads_operator_id');
+        localStorage.removeItem('LeadFlowPro_operator_active');
+        Cookies.remove('LeadFlowPro_operator_id');
       }
     }
     setIsInitializing(false);
@@ -79,11 +79,11 @@ export function OperatorProvider({ children, operators: initialOperators }: Oper
 
     setActiveOperator(operator);
     if (operator) {
-      localStorage.setItem('limpaleads_operator_active', operator.id);
-      Cookies.set('limpaleads_operator_id', operator.id, { expires: 365, path: '/' });
+      localStorage.setItem('LeadFlowPro_operator_active', operator.id);
+      Cookies.set('LeadFlowPro_operator_id', operator.id, { expires: 365, path: '/' });
     } else {
-      localStorage.removeItem('limpaleads_operator_active');
-      Cookies.remove('limpaleads_operator_id');
+      localStorage.removeItem('LeadFlowPro_operator_active');
+      Cookies.remove('LeadFlowPro_operator_id');
     }
   };
 
@@ -130,7 +130,7 @@ export function OperatorProvider({ children, operators: initialOperators }: Oper
       {blocked && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
           <div className="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-sm p-8 shadow-2xl border border-slate-200 dark:border-slate-800 text-center relative overflow-hidden transition-colors">
-            <div className="absolute top-0 left-0 w-full h-1 bg-indigo-600" />
+            <div className="absolute top-0 left-0 w-full h-1 bg-gold-600" />
             
             {/* Botão de Fechar (apenas se puder desistir da troca) */}
             {rememberedOperator && (
@@ -143,7 +143,7 @@ export function OperatorProvider({ children, operators: initialOperators }: Oper
               </button>
             )}
             
-            <div className="mx-auto w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-full flex items-center justify-center mb-4">
+            <div className="mx-auto w-16 h-16 bg-gold-100 dark:bg-gold-900/30 text-gold-600 dark:text-gold-400 rounded-full flex items-center justify-center mb-4">
               <UserCircle2 className="w-8 h-8" />
             </div>
             
@@ -160,10 +160,10 @@ export function OperatorProvider({ children, operators: initialOperators }: Oper
                     <button
                       key={op.id}
                       onClick={() => handleSelectOperator(op)}
-                      className="w-full flex items-center justify-between p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all font-medium text-slate-700 dark:text-slate-200 group"
+                      className="w-full flex items-center justify-between p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-gold-500 hover:bg-gold-50 dark:hover:bg-gold-900/20 transition-all font-medium text-slate-700 dark:text-slate-200 group"
                     >
                       <span>{op.name}</span>
-                      <div className="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/40 group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
+                      <div className="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-gold-100 dark:group-hover:bg-gold-900/40 group-hover:text-gold-600 dark:group-hover:text-gold-400">
                         →
                       </div>
                     </button>
@@ -173,7 +173,7 @@ export function OperatorProvider({ children, operators: initialOperators }: Oper
                 <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800">
                   <button
                     onClick={() => setIsAdding(true)}
-                    className="flex items-center justify-center gap-2 w-full p-3 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 rounded-xl transition-colors"
+                    className="flex items-center justify-center gap-2 w-full p-3 text-sm font-medium text-gold-600 dark:text-gold-400 hover:bg-gold-50 dark:hover:bg-gold-900/20 rounded-xl transition-colors"
                   >
                     <Plus className="w-4 h-4" />
                     Não estou na lista / Criar novo
@@ -202,7 +202,7 @@ export function OperatorProvider({ children, operators: initialOperators }: Oper
                     <input
                       id="op-name"
                       type="text"
-                      className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all dark:text-white"
+                      className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-gold-500 outline-none transition-all dark:text-white"
                       placeholder="Ex: João Silva"
                       value={newName}
                       onChange={(e) => setNewName(e.target.value)}
@@ -227,7 +227,7 @@ export function OperatorProvider({ children, operators: initialOperators }: Oper
                     <button
                       type="submit"
                       disabled={isSubmitting || !newName.trim()}
-                      className="flex-[2] bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl transition-all shadow-lg shadow-indigo-600/20 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                      className="flex-[2] bg-gold-600 hover:bg-gold-700 text-white font-semibold py-3 px-4 rounded-xl transition-all shadow-lg shadow-gold-600/20 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                     >
                       {isSubmitting ? (
                         <>

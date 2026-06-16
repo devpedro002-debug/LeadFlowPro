@@ -156,9 +156,9 @@ export function AgendaPageClient({
     {
       label: 'Total Fila',
       value: combinedTotal.toString(),
-      color: 'text-indigo-500',
-      bg: 'bg-indigo-50 dark:bg-indigo-950/20',
-      borderColor: 'border-indigo-100 dark:border-indigo-900/30',
+      color: 'text-gold-500',
+      bg: 'bg-gold-50 dark:bg-gold-950/20',
+      borderColor: 'border-gold-100 dark:border-gold-900/30',
     },
   ];
 
@@ -192,15 +192,15 @@ export function AgendaPageClient({
 
       {/* Filtro de estágio ativo */}
       {selectedStage && (
-        <div className="flex items-center gap-2 px-4 py-2 bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800 rounded-xl">
-          <span className="text-sm font-medium text-indigo-700 dark:text-indigo-300">
+        <div className="flex items-center gap-2 px-4 py-2 bg-gold-50 dark:bg-gold-900/20 border border-gold-100 dark:border-gold-800 rounded-xl">
+          <span className="text-sm font-medium text-gold-700 dark:text-gold-300">
             Filtrando: Estágio {selectedStage}
           </span>
           <button
             onClick={handleClearFilter}
-            className="p-1 hover:bg-indigo-100 dark:hover:bg-indigo-800 rounded-lg transition-colors"
+            className="p-1 hover:bg-gold-100 dark:hover:bg-gold-800 rounded-lg transition-colors"
           >
-            <X className="w-4 h-4 text-indigo-500" />
+            <X className="w-4 h-4 text-gold-500" />
           </button>
         </div>
       )}

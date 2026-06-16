@@ -99,7 +99,7 @@ export function LeadFilters() {
           className={cn(
             'w-full pl-4 pr-20 py-2.5 border rounded-xl text-sm shadow-sm transition-all',
             'text-slate-900 dark:text-slate-50 bg-white dark:bg-slate-900',
-            'focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500',
+            'focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500',
             'border-slate-200 dark:border-slate-800',
             isPending && 'opacity-60'
           )}
@@ -128,8 +128,8 @@ export function LeadFilters() {
             'absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8',
             'flex items-center justify-center rounded-lg transition-all disabled:opacity-50',
             isPending
-              ? 'text-indigo-600 animate-pulse'
-              : 'text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+              ? 'text-gold-600 animate-pulse'
+              : 'text-slate-400 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-gold-50 dark:hover:bg-gold-900/30'
           )}
           title="Pesquisar (Enter)"
         >
@@ -146,7 +146,7 @@ export function LeadFilters() {
         className={cn(
           'border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5',
           'text-sm text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 shadow-sm transition-colors',
-          'focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 cursor-pointer',
+          'focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 cursor-pointer',
           isPending && 'opacity-60'
         )}
       >
@@ -165,7 +165,7 @@ export function LeadFilters() {
         className={cn(
           'border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5',
           'text-sm text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 shadow-sm transition-colors',
-          'focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 cursor-pointer',
+          'focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 cursor-pointer',
           isPending && 'opacity-60'
         )}
       >

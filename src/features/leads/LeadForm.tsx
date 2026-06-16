@@ -89,7 +89,7 @@ export function LeadForm({ lead, onClose }: LeadFormProps) {
                 name="fullName"
                 defaultValue={lead?.fullName}
                 required
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
                 placeholder="João Silva"
               />
             </div>
@@ -100,7 +100,7 @@ export function LeadForm({ lead, onClose }: LeadFormProps) {
               <input
                 name="company"
                 defaultValue={lead?.company ?? ''}
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
                 placeholder="Empresa Ltda"
               />
             </div>
@@ -111,7 +111,7 @@ export function LeadForm({ lead, onClose }: LeadFormProps) {
               <input
                 name="jobTitle"
                 defaultValue={lead?.jobTitle ?? ''}
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
                 placeholder="CEO, Diretor..."
               />
             </div>
@@ -123,7 +123,7 @@ export function LeadForm({ lead, onClose }: LeadFormProps) {
                 name="email"
                 type="email"
                 defaultValue={lead?.email ?? ''}
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
                 placeholder="joao@empresa.com"
               />
             </div>
@@ -134,7 +134,7 @@ export function LeadForm({ lead, onClose }: LeadFormProps) {
               <input
                 name="phone"
                 defaultValue={lead?.phone ?? ''}
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
                 placeholder="(11) 99999-9999"
               />
             </div>
@@ -145,7 +145,7 @@ export function LeadForm({ lead, onClose }: LeadFormProps) {
               <input
                 name="linkedinUrl"
                 defaultValue={lead?.linkedinUrl ?? ''}
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
                 placeholder="https://linkedin.com/in/joao"
               />
             </div>
@@ -156,7 +156,7 @@ export function LeadForm({ lead, onClose }: LeadFormProps) {
               <input
                 name="customSource"
                 defaultValue={lead?.customSource ?? ''}
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors font-bold text-indigo-600 dark:text-indigo-400"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors font-bold text-gold-600 dark:text-gold-400"
                 placeholder="Ex: Indicação, Evento, etc."
               />
             </div>
@@ -168,7 +168,7 @@ export function LeadForm({ lead, onClose }: LeadFormProps) {
                 <select
                   name="status"
                   defaultValue={lead.status}
-                  className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                  className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
                 >
                   {Object.entries(LEAD_STATUS_MAP).map(([value, { label }]) => (
                     <option key={value} value={value}>{label}</option>
@@ -188,7 +188,7 @@ export function LeadForm({ lead, onClose }: LeadFormProps) {
                 <select
                   value={selectedStageOrder}
                   onChange={(e) => setSelectedStageOrder(e.target.value)}
-                  className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                  className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
                 >
                   <option value="">-- Sem cadência --</option>
                   {cadenceStages.map((stage) => (
@@ -208,7 +208,7 @@ export function LeadForm({ lead, onClose }: LeadFormProps) {
                 name="notes"
                 defaultValue={lead?.notes ?? ''}
                 rows={3}
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors resize-none"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors resize-none"
                 placeholder="Informações adicionais..."
               />
             </div>
@@ -224,13 +224,13 @@ export function LeadForm({ lead, onClose }: LeadFormProps) {
                 {lead.histories.map((h, i) => (
                   <div key={h.id} className="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-4 text-sm transition-colors">
                     <p className="font-semibold text-slate-700 dark:text-slate-300 mb-1 flex items-center justify-between">
-                      <span>Atualizado via: <span className="text-indigo-600 dark:text-indigo-400">{h.actionBy}</span></span>
+                      <span>Atualizado via: <span className="text-gold-600 dark:text-gold-400">{h.actionBy}</span></span>
                       <span className="text-xs text-slate-400 dark:text-slate-500 font-normal">
                         {new Date(h.createdAt).toLocaleString('pt-BR')}
                       </span>
                     </p>
                     <details className="cursor-pointer">
-                      <summary className="text-xs text-slate-500 dark:text-slate-400 font-medium hover:text-indigo-600 dark:hover:text-indigo-400">Ver Dados Anteriores vs Novos</summary>
+                      <summary className="text-xs text-slate-500 dark:text-slate-400 font-medium hover:text-gold-600 dark:hover:text-gold-400">Ver Dados Anteriores vs Novos</summary>
                       <div className="mt-2 grid grid-cols-2 gap-4 text-xs font-mono bg-white dark:bg-slate-950 p-3 rounded-lg border border-slate-100 dark:border-slate-800 max-h-40 overflow-auto transition-colors">
                         <div>
                           <p className="text-slate-400 dark:text-slate-500 mb-1 uppercase font-bold text-[10px]">Antes</p>
@@ -239,7 +239,7 @@ export function LeadForm({ lead, onClose }: LeadFormProps) {
                           </pre>
                         </div>
                         <div>
-                          <p className="text-indigo-400 mb-1 uppercase font-bold text-[10px]">Depois</p>
+                          <p className="text-gold-400 mb-1 uppercase font-bold text-[10px]">Depois</p>
                           <pre className="text-slate-600 dark:text-slate-300 whitespace-pre-wrap">
                             {JSON.stringify(h.newData, null, 2)}
                           </pre>
@@ -269,7 +269,7 @@ export function LeadForm({ lead, onClose }: LeadFormProps) {
             <button
               type="submit"
               disabled={isPending}
-              className="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-all text-sm flex items-center justify-center gap-2 disabled:opacity-50"
+              className="flex-1 px-4 py-3 bg-gold-600 hover:bg-gold-700 text-white font-semibold rounded-xl transition-all text-sm flex items-center justify-center gap-2 disabled:opacity-50"
             >
               {isPending && <Loader2 className="w-4 h-4 animate-spin" />}
               {isEdit ? 'Salvar alterações' : 'Criar Lead'}

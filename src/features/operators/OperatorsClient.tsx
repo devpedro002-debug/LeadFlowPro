@@ -102,7 +102,7 @@ export function OperatorsClient({ initialOperators }: OperatorsClientProps) {
       <div className="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50/50 dark:bg-slate-900/50">
         <div>
           <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-            <User className="w-5 h-5 text-indigo-500" />
+            <User className="w-5 h-5 text-gold-500" />
             Operadores
           </h2>
           <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
@@ -111,7 +111,7 @@ export function OperatorsClient({ initialOperators }: OperatorsClientProps) {
         </div>
         <button
           onClick={() => handleOpenModal()}
-          className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-medium transition-colors"
+          className="flex items-center gap-2 px-4 py-2 bg-gold-600 hover:bg-gold-700 text-white rounded-xl font-medium transition-colors"
         >
           <Plus className="w-4 h-4" />
           Novo Operador
@@ -127,7 +127,7 @@ export function OperatorsClient({ initialOperators }: OperatorsClientProps) {
           operators.map((operator) => (
             <div key={operator.id} className="p-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
               <div className="flex items-center gap-4">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${operator.isActive ? 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400' : 'bg-slate-100 text-slate-400 dark:bg-slate-800 dark:text-slate-500'}`}>
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${operator.isActive ? 'bg-gold-100 text-gold-600 dark:bg-gold-900/30 dark:text-gold-400' : 'bg-slate-100 text-slate-400 dark:bg-slate-800 dark:text-slate-500'}`}>
                   <span className="font-semibold">{operator.name.charAt(0).toUpperCase()}</span>
                 </div>
                 <div>
@@ -159,7 +159,7 @@ export function OperatorsClient({ initialOperators }: OperatorsClientProps) {
                 </button>
                 <button
                   onClick={() => handleOpenModal(operator)}
-                  className="p-1.5 text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 rounded-lg transition-colors"
+                  className="p-1.5 text-slate-400 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-gold-50 dark:hover:bg-gold-900/20 rounded-lg transition-colors"
                   title="Editar operador"
                 >
                   <Edit2 className="w-4 h-4" />
@@ -203,7 +203,7 @@ export function OperatorsClient({ initialOperators }: OperatorsClientProps) {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Ex: João Silva"
-                  className="w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors dark:text-slate-100"
+                  className="w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors dark:text-slate-100"
                   autoFocus
                   required
                 />
@@ -221,7 +221,7 @@ export function OperatorsClient({ initialOperators }: OperatorsClientProps) {
                 <button
                   type="submit"
                   disabled={isSubmitting || !name.trim()}
-                  className="flex-1 px-4 py-2 text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl font-medium transition-colors disabled:opacity-50"
+                  className="flex-1 px-4 py-2 text-white bg-gold-600 hover:bg-gold-700 rounded-xl font-medium transition-colors disabled:opacity-50"
                 >
                   {isSubmitting ? 'Salvando...' : 'Salvar'}
                 </button>

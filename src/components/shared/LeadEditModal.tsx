@@ -106,8 +106,8 @@ export function LeadEditModal({ lead, isOpen, onClose }: LeadEditModalProps) {
         {/* Header */}
         <div className="flex items-center justify-between px-6 sm:px-8 py-5 sm:py-6 border-b border-slate-100 dark:border-slate-800">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-indigo-50 dark:bg-indigo-950/30">
-              <Pencil className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+            <div className="p-2 rounded-xl bg-gold-50 dark:bg-gold-950/30">
+              <Pencil className="w-4 h-4 text-gold-600 dark:text-gold-400" />
             </div>
             <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100">
               Editar Lead
@@ -136,7 +136,7 @@ export function LeadEditModal({ lead, isOpen, onClose }: LeadEditModalProps) {
                 name="fullName"
                 defaultValue={lead.fullName}
                 required
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
                 placeholder="João Silva"
               />
             </div>
@@ -147,7 +147,7 @@ export function LeadEditModal({ lead, isOpen, onClose }: LeadEditModalProps) {
               <input
                 name="company"
                 defaultValue={lead.company ?? ''}
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
                 placeholder="Empresa Ltda"
               />
             </div>
@@ -158,7 +158,7 @@ export function LeadEditModal({ lead, isOpen, onClose }: LeadEditModalProps) {
               <input
                 name="jobTitle"
                 defaultValue={lead.jobTitle ?? ''}
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
                 placeholder="CEO, Diretor..."
               />
             </div>
@@ -170,7 +170,7 @@ export function LeadEditModal({ lead, isOpen, onClose }: LeadEditModalProps) {
                 name="email"
                 type="email"
                 defaultValue={lead.email ?? ''}
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
                 placeholder="joao@empresa.com"
               />
             </div>
@@ -181,7 +181,7 @@ export function LeadEditModal({ lead, isOpen, onClose }: LeadEditModalProps) {
               <input
                 name="phone"
                 defaultValue={lead.phone ?? ''}
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
                 placeholder="(11) 99999-9999"
               />
             </div>
@@ -192,7 +192,7 @@ export function LeadEditModal({ lead, isOpen, onClose }: LeadEditModalProps) {
               <input
                 name="linkedinUrl"
                 defaultValue={lead.linkedinUrl ?? ''}
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
                 placeholder="https://linkedin.com/in/joao"
               />
             </div>
@@ -203,7 +203,7 @@ export function LeadEditModal({ lead, isOpen, onClose }: LeadEditModalProps) {
               <input
                 name="customSource"
                 defaultValue={lead.customSource ?? ''}
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors font-bold text-indigo-600 dark:text-indigo-400"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors font-bold text-gold-600 dark:text-gold-400"
                 placeholder="Ex: Indicação, Evento, etc."
               />
             </div>
@@ -214,7 +214,7 @@ export function LeadEditModal({ lead, isOpen, onClose }: LeadEditModalProps) {
               <select
                 name="status"
                 defaultValue={lead.status}
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
               >
                 {Object.entries(LEAD_STATUS_MAP).map(([value, { label }]) => (
                   <option key={value} value={value}>{label}</option>
@@ -233,7 +233,7 @@ export function LeadEditModal({ lead, isOpen, onClose }: LeadEditModalProps) {
                 <select
                   value={selectedStageOrder}
                   onChange={(e) => setSelectedStageOrder(e.target.value)}
-                  className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors"
+                  className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors"
                 >
                   <option value="">-- Sem cadência --</option>
                   {cadenceStages.map((stage) => (
@@ -252,7 +252,7 @@ export function LeadEditModal({ lead, isOpen, onClose }: LeadEditModalProps) {
               <textarea
                 name="notes"
                 rows={3}
-                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-colors resize-none"
+                className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gold-500/30 focus:border-gold-500 transition-colors resize-none"
                 placeholder="Informações adicionais..."
               />
             </div>
@@ -275,7 +275,7 @@ export function LeadEditModal({ lead, isOpen, onClose }: LeadEditModalProps) {
             <button
               type="submit"
               disabled={isPending}
-              className="flex-1 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-all text-sm flex items-center justify-center gap-2 disabled:opacity-50 min-h-[44px]"
+              className="flex-1 px-4 py-3 bg-gold-600 hover:bg-gold-700 text-white font-semibold rounded-xl transition-all text-sm flex items-center justify-center gap-2 disabled:opacity-50 min-h-[44px]"
             >
               {isPending && <Loader2 className="w-4 h-4 animate-spin" />}
               Salvar alterações

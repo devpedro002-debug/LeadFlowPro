@@ -28,7 +28,7 @@ export function PasswordInput({ label, error, className, ...props }: PasswordInp
           type={showPassword ? 'text' : 'password'}
           className={`w-full bg-white/5 border ${
             error ? 'border-red-500/50' : 'border-white/10'
-          } rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all pr-12 ${className}`}
+          } rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-gold-500/50 focus:border-gold-500 transition-all pr-12 ${className}`}
         />
         <button
           type="button"

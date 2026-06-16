@@ -109,11 +109,11 @@ export function LeadActionDrawer({ isOpen, onClose, leadProgress, templates, onA
   // Sincroniza o texto compilado sempre que o template ou lead mudar
   useEffect(() => {
     if (selectedTemplate && leadProgress?.lead) {
-      setCompiledText(interpolateTemplate(selectedTemplate.body, leadProgress.lead));
+      setCompiledText(interpolateTemplate(selectedTemplate.body, leadProgress.lead, activeOperator?.name));
     } else {
       setCompiledText('');
     }
-  }, [selectedTemplate, leadProgress?.lead]);
+  }, [selectedTemplate, leadProgress?.lead, activeOperator]);
 
   if (!isOpen || !leadProgress) return null;
 
@@ -192,7 +192,7 @@ export function LeadActionDrawer({ isOpen, onClose, leadProgress, templates, onA
                  <h2 className="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight leading-tight">{leadProgress.lead.fullName}</h2>
                  <div className="flex gap-2">
                     {leadProgress.lead.linkedinUrl && (
-                      <a href={leadProgress.lead.linkedinUrl} target="_blank" className="p-2 bg-indigo-50 text-indigo-600 rounded-xl hover:bg-indigo-100">
+                      <a href={leadProgress.lead.linkedinUrl} target="_blank" className="p-2 bg-gold-50 text-gold-600 rounded-xl hover:bg-gold-100">
                         <LinkedinIcon className="w-4 h-4" />
                       </a>
                     )}
@@ -229,12 +229,12 @@ export function LeadActionDrawer({ isOpen, onClose, leadProgress, templates, onA
                 onClick={() => setActiveTab(tab as any)}
                 className={cn(
                   "py-4 px-4 text-xs font-black uppercase tracking-widest relative transition-all",
-                  activeTab === tab ? "text-indigo-600 dark:text-indigo-400" : "text-slate-400 hover:text-slate-600"
+                  activeTab === tab ? "text-gold-600 dark:text-gold-400" : "text-slate-400 hover:text-slate-600"
                 )}
               >
                 {tab === 'ACTION' ? 'Execução' : tab === 'NOTES' ? 'Notas' : 'Histórico'}
                 {activeTab === tab && (
-                  <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600 dark:bg-indigo-500 rounded-full" />
+                  <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold-600 dark:bg-gold-500 rounded-full" />
                 )}
               </button>
             ))}
@@ -246,16 +246,16 @@ export function LeadActionDrawer({ isOpen, onClose, leadProgress, templates, onA
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-10">
                 
 {/* Canal de Ação */}
-                <div className="bg-indigo-50/50 dark:bg-indigo-950/20 border-2 border-indigo-100 dark:border-indigo-900/30 p-8 rounded-[2.5rem] relative overflow-hidden group/stage">
+                <div className="bg-gold-50/50 dark:bg-gold-950/20 border-2 border-gold-100 dark:border-gold-900/30 p-8 rounded-[2.5rem] relative overflow-hidden group/stage">
                   <div className="relative space-y-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-black">{leadProgress.currentStageOrder}</div>
-                      <h4 className="font-black text-indigo-900 dark:text-indigo-100">Tarefa para Agora</h4>
+                      <div className="w-10 h-10 rounded-xl bg-gold-600 text-white flex items-center justify-center font-black">{leadProgress.currentStageOrder}</div>
+                      <h4 className="font-black text-gold-900 dark:text-gold-100">Tarefa para Agora</h4>
                     </div>
                     
                     {/* Seletor de Canal */}
                     <div className="space-y-2">
-                      <label className="text-[10px] font-black text-indigo-900/40 uppercase tracking-widest pl-1">
+                      <label className="text-[10px] font-black text-gold-900/40 uppercase tracking-widest pl-1">
                         Canal de Contato
                       </label>
                       <div className="flex gap-2">
@@ -287,7 +287,7 @@ export function LeadActionDrawer({ isOpen, onClose, leadProgress, templates, onA
                           className={cn(
                             "flex-1 flex flex-col items-center gap-1.5 px-3 py-3 rounded-2xl border-2 transition-all",
                             selectedChannel === 'EMAIL'
-                              ? "bg-indigo-100 dark:bg-indigo-900/30 border-indigo-500 dark:border-indigo-400 text-indigo-600 dark:text-indigo-300"
+                              ? "bg-gold-100 dark:bg-gold-900/30 border-gold-500 dark:border-gold-400 text-gold-600 dark:text-gold-300"
                               : "bg-white dark:bg-slate-900 border-slate-100 dark:border-slate-800 text-slate-400 hover:border-slate-300 dark:hover:border-slate-700",
                             !leadProgress.lead.email && "opacity-40 cursor-not-allowed"
                           )}
@@ -342,28 +342,28 @@ export function LeadActionDrawer({ isOpen, onClose, leadProgress, templates, onA
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-black text-indigo-950 dark:text-indigo-50">
+                      <h3 className="text-xl font-black text-gold-950 dark:text-gold-50">
                         {selectedChannel === 'LINKEDIN' ? 'Abordagem via LinkedIn' : selectedChannel === 'EMAIL' ? 'Envio de E-mail' : 'Contato WhatsApp'}
                       </h3>
-                      <p className="text-indigo-700/60 dark:text-indigo-300/60 font-medium">Ação prioritária da cadência {leadProgress.cadence.name}.</p>
+                      <p className="text-gold-700/60 dark:text-gold-300/60 font-medium">Ação prioritária da cadência {leadProgress.cadence.name}.</p>
                     </div>
 
                     <div className="space-y-3 pt-2">
                        <div className="flex flex-col gap-1.5">
-                          <label className="text-[10px] font-black text-indigo-900/40 uppercase tracking-widest pl-1">Modelo de Abordagem</label>
+                          <label className="text-[10px] font-black text-gold-900/40 uppercase tracking-widest pl-1">Modelo de Abordagem</label>
                           <div className="relative">
                             <select 
                               value={selectedTemplateId || ''} 
                               onChange={(e) => setSelectedTemplateId(e.target.value)}
                               disabled={filteredTemplates.length === 0}
-                              className="w-full appearance-none bg-white dark:bg-slate-900 border border-indigo-100 dark:border-indigo-800 rounded-2xl px-5 py-3.5 text-sm font-bold text-slate-700 dark:text-slate-200 outline-none focus:border-indigo-500 transition-all cursor-pointer shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                              className="w-full appearance-none bg-white dark:bg-slate-900 border border-gold-100 dark:border-gold-800 rounded-2xl px-5 py-3.5 text-sm font-bold text-slate-700 dark:text-slate-200 outline-none focus:border-gold-500 transition-all cursor-pointer shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                               {filteredTemplates.length === 0 && <option value="">Nenhum template para este canal</option>}
                               {filteredTemplates.map(t => (
                                 <option key={t.id} value={t.id}>{t.name}</option>
                               ))}
                             </select>
-                            <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-indigo-400 pointer-events-none" />
+                            <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gold-400 pointer-events-none" />
                           </div>
                        </div>
 
@@ -371,22 +371,22 @@ export function LeadActionDrawer({ isOpen, onClose, leadProgress, templates, onA
                        {selectedTemplate && (
                          <div className="space-y-2 mt-2">
                             <div className="flex items-center justify-between px-1">
-                               <label className="text-[10px] font-black text-indigo-900/40 uppercase tracking-widest">Pré-visualização</label>
-                               {getMissingFields(selectedTemplate.body, leadProgress.lead).length > 0 && (
+                               <label className="text-[10px] font-black text-gold-900/40 uppercase tracking-widest">Pré-visualização</label>
+                               {getMissingFields(selectedTemplate.body, leadProgress.lead, activeOperator?.name).length > 0 && (
                                  <span className="flex items-center gap-1 text-[9px] font-bold text-amber-600 bg-amber-50 dark:bg-amber-950/30 px-2 py-0.5 rounded-full">
                                    <AlertTriangle className="w-3 h-3" /> Campos pendentes
                                  </span>
                                )}
                             </div>
-                            <div className="relative bg-white dark:bg-slate-950 border border-indigo-50 dark:border-indigo-900/40 rounded-2xl p-4 shadow-inner">
+                            <div className="relative bg-white dark:bg-slate-950 border border-gold-50 dark:border-gold-900/40 rounded-2xl p-4 shadow-inner">
                                <textarea
                                  value={compiledText}
                                  onChange={(e) => setCompiledText(e.target.value)}
                                  className="w-full bg-transparent border-none text-sm font-medium text-slate-700 dark:text-slate-300 resize-none outline-none focus:ring-0 h-24"
                                />
                                <div className="absolute top-2 right-2 flex gap-1">
-                                  <div className="w-1.5 h-1.5 rounded-full bg-indigo-200" />
-                                  <div className="w-1.5 h-1.5 rounded-full bg-indigo-200" />
+                                  <div className="w-1.5 h-1.5 rounded-full bg-gold-200" />
+                                  <div className="w-1.5 h-1.5 rounded-full bg-gold-200" />
                                </div>
                             </div>
                          </div>
@@ -403,7 +403,7 @@ export function LeadActionDrawer({ isOpen, onClose, leadProgress, templates, onA
                          <div className="flex flex-col gap-2">
                            <button 
                              onClick={() => setContactModalOpen(true)}
-                             className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-2xl text-sm font-black hover:bg-indigo-700 transition-all active:scale-95 shadow-lg shadow-indigo-100 dark:shadow-none"
+                             className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gold-600 text-white rounded-2xl text-sm font-black hover:bg-gold-700 transition-all active:scale-95 shadow-lg shadow-gold-100 dark:shadow-none"
                            >
                              {selectedChannel === 'LINKEDIN' ? <LinkedinIcon className="w-4 h-4" /> : selectedChannel === 'EMAIL' ? <Mail className="w-4 h-4" /> : <Phone className="w-4 h-4" />}
                              Abrir com {selectedChannel === 'LINKEDIN' ? 'LinkedIn' : selectedChannel === 'EMAIL' ? 'E-mail' : 'WhatsApp'}
@@ -463,7 +463,7 @@ export function LeadActionDrawer({ isOpen, onClose, leadProgress, templates, onA
                   <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest">Qual foi o resultado?</h4>
                   <div className="grid grid-cols-2 gap-3">
                     {[
-                      { id: 'SENT', label: 'Mensagem Enviada', icon: Send, color: 'text-indigo-600', bg: 'bg-indigo-50/50' },
+                      { id: 'SENT', label: 'Mensagem Enviada', icon: Send, color: 'text-gold-600', bg: 'bg-gold-50/50' },
                       { id: 'REPLIED', label: 'Lead Respondeu', icon: Check, color: 'text-emerald-600', bg: 'bg-emerald-50/50' },
                       { id: 'FAILED', label: 'Não Conseguimos', icon: XCircle, color: 'text-rose-600', bg: 'bg-rose-50/50' },
                       { 
@@ -500,7 +500,7 @@ export function LeadActionDrawer({ isOpen, onClose, leadProgress, templates, onA
                           }
                         }}
                         className={cn(
-                          "flex flex-col items-center gap-3 p-4 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-indigo-500 transition-all text-center",
+                          "flex flex-col items-center gap-3 p-4 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-gold-500 transition-all text-center",
                           "hover:bg-slate-50 dark:hover:bg-slate-950 group relative disabled:opacity-50"
                         )}
                       >
@@ -519,7 +519,7 @@ export function LeadActionDrawer({ isOpen, onClose, leadProgress, templates, onA
                    <textarea 
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
-                    className="w-full h-32 p-4 bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-3xl outline-none focus:border-indigo-500 transition-all text-sm font-medium"
+                    className="w-full h-32 p-4 bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-3xl outline-none focus:border-gold-500 transition-all text-sm font-medium"
                     placeholder="Registrar algum feedback importante..."
                    />
                 </div>
@@ -531,14 +531,14 @@ export function LeadActionDrawer({ isOpen, onClose, leadProgress, templates, onA
           <div className="p-8 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
              <div className="flex items-center justify-between mb-4">
                 <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Próxima Sugestão</span>
-                <span className="text-xs font-bold text-indigo-600">{nextStage ? `Estágio ${nextStage.order} em ${nextStage.delayDays} dias` : 'Fim da Linha'}</span>
+                <span className="text-xs font-bold text-gold-600">{nextStage ? `Estágio ${nextStage.order} em ${nextStage.delayDays} dias` : 'Fim da Linha'}</span>
              </div>
              <div className="grid grid-cols-2 gap-4">
                 <button onClick={onClose} className="px-6 py-4 rounded-3xl font-bold text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Fechar</button>
                 <button 
                   disabled={isSubmitting}
                   onClick={() => handleExecute('SENT')}
-                  className="px-6 py-4 rounded-3xl bg-indigo-600 text-white font-black hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 dark:shadow-none flex items-center justify-center gap-2 group/btn disabled:opacity-50"
+                  className="px-6 py-4 rounded-3xl bg-gold-600 text-white font-black hover:bg-gold-700 transition-all shadow-xl shadow-gold-100 dark:shadow-none flex items-center justify-center gap-2 group/btn disabled:opacity-50"
                 >
                   {isSubmitting ? 'Salvando...' : 'Confirmar Envio'}
                   <ChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />

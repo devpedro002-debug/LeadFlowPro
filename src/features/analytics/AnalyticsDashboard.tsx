@@ -29,9 +29,9 @@ const STATUS_COLORS: Record<string, string> = {
   PAUSADO: '#94a3b8',
 };
 
-// Cores dinâmicas para estágios (gradiente indigo → rose)
+// Cores dinâmicas para estágios (gradiente gold → rose)
 const STAGE_COLORS = [
-  '#6366f1', // Estágio 1 - Indigo
+  '#6366f1', // Estágio 1 - gold
   '#8b5cf6', // Estágio 2 - Violet
   '#a855f7', // Estágio 3 - Purple
   '#d946ef', // Estágio 4 - Fuchsia
@@ -375,8 +375,8 @@ export function AnalyticsDashboard({ data }: Props) {
           label="Leads Ativos"
           value={activeLeads}
           icon={Users}
-          color="indigo"
-          bgColor="bg-indigo-50 dark:bg-indigo-950/30"
+          color="gold"
+          bgColor="bg-gold-50 dark:bg-gold-950/30"
         />
         <KPICard 
           label="Convertidos"
@@ -424,9 +424,9 @@ export function AnalyticsDashboard({ data }: Props) {
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">Pipeline de Estágios</h3>
               <p className="text-sm text-slate-500">Fluxo de leads pela cadência</p>
             </div>
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-indigo-50 dark:bg-indigo-900/30 rounded-lg">
-              <Zap className="w-4 h-4 text-indigo-600" />
-              <span className="text-sm font-bold text-indigo-700">{totalInCadence} ativos</span>
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-gold-50 dark:bg-gold-900/30 rounded-lg">
+              <Zap className="w-4 h-4 text-gold-600" />
+              <span className="text-sm font-bold text-gold-700">{totalInCadence} ativos</span>
             </div>
           </div>
           <StageProgressBar stages={stages} stats={cadenceStats} total={totalInCadence} />
@@ -471,10 +471,10 @@ export function AnalyticsDashboard({ data }: Props) {
           <p className="text-emerald-200 text-xs mt-1">de todos os leads</p>
         </div>
         
-        <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl p-5 text-white">
-          <p className="text-indigo-100 text-xs font-medium uppercase tracking-wider mb-1">Em Cadência</p>
+        <div className="bg-gradient-to-br from-gold-500 to-gold-600 rounded-2xl p-5 text-white">
+          <p className="text-gold-100 text-xs font-medium uppercase tracking-wider mb-1">Em Cadência</p>
           <p className="text-4xl font-black">{totalInCadence}</p>
-          <p className="text-indigo-200 text-xs mt-1">leads ativos no fluxo</p>
+          <p className="text-gold-200 text-xs mt-1">leads ativos no fluxo</p>
         </div>
         
         <div className="bg-gradient-to-br from-violet-500 to-violet-600 rounded-2xl p-5 text-white">

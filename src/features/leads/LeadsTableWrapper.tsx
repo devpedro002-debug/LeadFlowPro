@@ -89,7 +89,7 @@ export function LeadsTableWrapper({ initialLeads, initialTotal, initialPage, ini
         <p className="text-red-600 font-medium mb-4">{error}</p>
         <button
           onClick={() => router.refresh()}
-          className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl"
+          className="bg-gold-600 hover:bg-gold-700 text-white px-4 py-2 rounded-xl"
         >
           Recarregar pagina
         </button>

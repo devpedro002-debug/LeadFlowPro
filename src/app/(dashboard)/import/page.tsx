@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { ImportPageClient } from './ImportPageClient';
 
 export const metadata: Metadata = {
-  title: 'Importar Leads | LimpaLeads',
+  title: 'Importar Leads | LeadFlowPro',
 };
 
 export default function ImportPage() {

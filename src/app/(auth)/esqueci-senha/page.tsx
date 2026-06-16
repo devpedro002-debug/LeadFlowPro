@@ -14,7 +14,7 @@ export default function ForgotPasswordPage() {
       {/* Cabeçalho */}
       <div className="text-center">
         <div className="inline-flex items-center gap-3 mb-6">
-          <div className="bg-indigo-600 p-3 rounded-2xl shadow-lg shadow-indigo-500/30">
+          <div className="bg-gold-600 p-3 rounded-2xl shadow-lg shadow-gold-500/30">
             <KeyRound className="w-8 h-8 text-white" />
           </div>
         </div>
@@ -36,7 +36,7 @@ export default function ForgotPasswordPage() {
             name="email"
             type="email"
             required
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all font-mono"
+            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-gold-500/50 transition-all font-mono"
             placeholder="seu@email.com"
           />
         </div>
@@ -80,7 +80,7 @@ export default function ForgotPasswordPage() {
           <button
             type="submit"
             disabled={isPending}
-            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl transition-all shadow-lg shadow-indigo-500/20 disabled:opacity-50 flex items-center justify-center gap-2"
+            className="w-full bg-gold-600 hover:bg-gold-700 text-white font-bold py-3 px-4 rounded-xl transition-all shadow-lg shadow-gold-500/20 disabled:opacity-50 flex items-center justify-center gap-2"
           >
             {isPending ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Redefinir e Salvar'}
           </button>

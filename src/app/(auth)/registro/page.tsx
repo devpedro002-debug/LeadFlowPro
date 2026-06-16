@@ -17,7 +17,7 @@ function RegisterContent() {
       {/* Cabeçalho */}
       <div className="text-center">
         <div className="inline-flex items-center gap-3 mb-6">
-          <div className="bg-indigo-600 p-3 rounded-2xl shadow-lg shadow-indigo-500/30 transition-transform active:scale-95">
+          <div className="bg-gold-600 p-3 rounded-2xl shadow-lg shadow-gold-500/30 transition-transform active:scale-95">
             <UserPlus className="w-8 h-8 text-white" />
           </div>
         </div>
@@ -25,7 +25,7 @@ function RegisterContent() {
           Criar sua conta
         </h1>
         <p className="text-slate-400 mt-2 max-w-xs mx-auto">
-          Preencha os dados abaixo para acessar a plataforma LimpaLeads.
+          Preencha os dados abaixo para acessar a plataforma LeadFlowPro.
         </p>
       </div>
 
@@ -40,7 +40,7 @@ function RegisterContent() {
             name="email"
             type="email"
             required
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all shadow-inner"
+            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-gold-500/50 transition-all shadow-inner"
             placeholder="seu@email.com"
             defaultValue={state?.email || ''}
           />
@@ -55,7 +55,7 @@ function RegisterContent() {
             name="name"
             type="text"
             required
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
+            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-gold-500/50 transition-all"
             placeholder="Seu nome"
           />
         </div>
@@ -87,14 +87,14 @@ function RegisterContent() {
         <button
           type="submit"
           disabled={isPending}
-          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl transition-all shadow-lg shadow-indigo-500/20 disabled:opacity-50 flex items-center justify-center gap-2 group"
+          className="w-full bg-gold-600 hover:bg-gold-700 text-white font-bold py-3 px-4 rounded-xl transition-all shadow-lg shadow-gold-500/20 disabled:opacity-50 flex items-center justify-center gap-2 group"
         >
           {isPending ? (
             <Loader2 className="w-5 h-5 animate-spin" />
           ) : (
             <>
               Finalizar e Entrar
-              <ShieldCheck className="w-4 h-4 text-indigo-200 group-hover:translate-x-1 transition-transform" />
+              <ShieldCheck className="w-4 h-4 text-gold-200 group-hover:translate-x-1 transition-transform" />
             </>
           )}
         </button>
@@ -102,7 +102,7 @@ function RegisterContent() {
 
       <p className="text-center text-sm text-slate-500">
         Já possui conta?{' '}
-        <Link href="/login" className="text-indigo-400 hover:text-indigo-300 font-semibold transition-colors">
+        <Link href="/login" className="text-gold-400 hover:text-gold-300 font-semibold transition-colors">
           Fazer login
         </Link>
       </p>

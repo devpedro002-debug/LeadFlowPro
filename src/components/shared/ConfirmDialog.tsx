@@ -82,7 +82,7 @@ export function ConfirmDialog({
                   'flex-1 px-4 py-3 font-semibold rounded-xl transition-all text-sm text-white flex items-center justify-center gap-2 disabled:opacity-50',
                   destructive
                     ? 'bg-rose-500 hover:bg-rose-600'
-                    : 'bg-indigo-600 hover:bg-indigo-700'
+                    : 'bg-gold-600 hover:bg-gold-700'
                 )}
               >
                 {loading ? (

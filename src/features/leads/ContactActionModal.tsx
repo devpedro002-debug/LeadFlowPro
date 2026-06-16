@@ -97,15 +97,15 @@ export function ContactActionModal({
     }
     const template = activeTemplates.find((t) => t.id === selectedTemplateId);
     if (template) {
-      setCompiledSubject(interpolateTemplate(template.subject || '', lead));
-      setCompiledText(interpolateTemplate(template.body, lead));
+      setCompiledSubject(interpolateTemplate(template.subject || '', lead, activeOperator?.name));
+      setCompiledText(interpolateTemplate(template.body, lead, activeOperator?.name));
     } else {
       setCompiledSubject('');
       setCompiledText('');
     }
     setCopied(false);
   // activeTemplates depende de templates+channel, selectedTemplateId e lead
-  }, [selectedTemplateId, lead, templates, channel]);
+  }, [selectedTemplateId, lead, templates, channel, activeOperator]);
 
   if (!isOpen || !lead) return null;
 
@@ -210,7 +210,7 @@ export function ContactActionModal({
 
   const channelLabel = isLinkedIn ? 'LinkedIn' : isWhatsApp ? 'WhatsApp' : 'E-mail';
   const ChannelIcon = isLinkedIn ? LinkedinIcon : isWhatsApp ? MessageCircle : Mail;
-  const iconColor = isLinkedIn ? 'text-blue-600' : isWhatsApp ? 'text-emerald-600' : 'text-indigo-600';
+  const iconColor = isLinkedIn ? 'text-blue-600' : isWhatsApp ? 'text-emerald-600' : 'text-gold-600';
 
   return (
     <div
@@ -257,8 +257,8 @@ export function ContactActionModal({
               className="p-12 flex flex-col items-center text-center space-y-6"
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-indigo-500 rounded-full animate-ping opacity-25" />
-                <div className={`p-6 rounded-full bg-indigo-100 dark:bg-indigo-900/30 ${iconColor} relative`}>
+                <div className="absolute inset-0 bg-gold-500 rounded-full animate-ping opacity-25" />
+                <div className={`p-6 rounded-full bg-gold-100 dark:bg-gold-900/30 ${iconColor} relative`}>
                   <ChannelIcon className="w-12 h-12" />
                 </div>
               </div>
@@ -270,7 +270,7 @@ export function ContactActionModal({
               </div>
               <button 
                 onClick={() => setView('FOLLOWUP')}
-                className="text-sm font-bold text-indigo-600 hover:text-indigo-800 underline underline-offset-4"
+                className="text-sm font-bold text-gold-600 hover:text-gold-800 underline underline-offset-4"
               >
                 Voltei agora, atualizar status
               </button>
@@ -305,14 +305,14 @@ export function ContactActionModal({
                         onClick={() => handleStatusSelect(key as LeadStatus)}
                         className={cn(
                           "flex flex-col items-center justify-center p-6 rounded-3xl border-2 transition-all group text-center",
-                          "hover:border-indigo-500 dark:hover:border-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950/30 active:scale-95 disabled:opacity-50",
+                          "hover:border-gold-500 dark:hover:border-gold-400 hover:bg-gold-50 dark:hover:bg-gold-950/30 active:scale-95 disabled:opacity-50",
                           borderClasses || 'border-slate-100 dark:border-slate-800'
                         )}
                       >
                         <div className={cn("p-4 rounded-2xl mb-3 transition-colors", bgClasses)}>
                           <Icon className="w-8 h-8" />
                         </div>
-                        <span className="font-bold text-slate-700 dark:text-slate-300 group-hover:dark:text-indigo-300">{config.label}</span>
+                        <span className="font-bold text-slate-700 dark:text-slate-300 group-hover:dark:text-gold-300">{config.label}</span>
                       </button>
                     );
                   })}
@@ -353,7 +353,7 @@ export function ContactActionModal({
                 <button
                   onClick={() => setView('FOLLOWUP_NOTE')}
                   disabled={isUpdatingStatus}
-                  className="flex-1 px-6 py-4 rounded-2xl font-bold bg-indigo-600 text-white hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-100"
+                  className="flex-1 px-6 py-4 rounded-2xl font-bold bg-gold-600 text-white hover:bg-gold-700 transition-colors shadow-lg shadow-gold-100"
                 >
                   Sim
                 </button>
@@ -377,7 +377,7 @@ export function ContactActionModal({
                 onChange={(e) => setNote(e.target.value)}
                 placeholder="Ex: Cliente demonstrou interesse mas pediu para ligar semana que vem..."
                 rows={5}
-                className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 outline-none focus:border-indigo-500 text-slate-700 dark:text-slate-100 font-medium transition-colors"
+                className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 outline-none focus:border-gold-500 text-slate-700 dark:text-slate-100 font-medium transition-colors"
                 disabled={isUpdatingStatus}
               />
               <div className="flex items-center gap-3 justify-end">
@@ -391,7 +391,7 @@ export function ContactActionModal({
                 <button
                   onClick={handleFinishWithNote}
                   disabled={!note.trim() || isUpdatingStatus}
-                  className="px-8 py-2.5 rounded-xl font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition-colors disabled:opacity-50 flex items-center gap-2 shadow-lg shadow-indigo-200"
+                  className="px-8 py-2.5 rounded-xl font-bold text-white bg-gold-600 hover:bg-gold-700 transition-colors disabled:opacity-50 flex items-center gap-2 shadow-lg shadow-gold-200"
                 >
                   {isUpdatingStatus && <Loader2 className="w-4 h-4 animate-spin" />}
                   Salvar e Finalizar
@@ -415,7 +415,7 @@ export function ContactActionModal({
                     <select
                       value={selectedTemplateId}
                       onChange={(e) => setSelectedTemplateId(e.target.value)}
-                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 rounded-xl px-4 py-3 outline-none focus:border-indigo-500 font-medium transition-colors"
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 rounded-xl px-4 py-3 outline-none focus:border-gold-500 font-medium transition-colors"
                     >
                       <option value="" disabled>
                         Selecione um template de {channelLabel}
@@ -442,7 +442,7 @@ export function ContactActionModal({
                       </label>
                       <button
                         onClick={handleCopy}
-                        className="text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1 transition-colors"
+                        className="text-xs font-bold text-gold-600 hover:text-gold-800 flex items-center gap-1 transition-colors"
                       >
                         {copied ? (
                           <>
@@ -459,7 +459,7 @@ export function ContactActionModal({
                       value={compiledText}
                       onChange={(e) => setCompiledText(e.target.value)}
                       rows={6}
-                      className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-4 outline-none focus:border-indigo-500 text-slate-700 dark:text-slate-300 font-medium font-sans leading-relaxed resize-y transition-colors"
+                      className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-4 outline-none focus:border-gold-500 text-slate-700 dark:text-slate-300 font-medium font-sans leading-relaxed resize-y transition-colors"
                       placeholder="A mensagem será renderizada aqui..."
                     />
                     <p className="text-xs text-slate-400 dark:text-slate-500 mt-2">
@@ -483,7 +483,7 @@ export function ContactActionModal({
                 <button
                   onClick={handleCopyAndGo}
                   disabled={!compiledText || isUpdatingStatus}
-                  className="px-6 py-2.5 rounded-xl font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 shadow-lg shadow-indigo-200"
+                  className="px-6 py-2.5 rounded-xl font-bold text-white bg-gold-600 hover:bg-gold-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 shadow-lg shadow-gold-200"
                 >
                   {isUpdatingStatus ? (
                     <Loader2 className="w-4 h-4 animate-spin" />

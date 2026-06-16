@@ -59,7 +59,7 @@ function buildUnifiedList(
 function ActionTypeBadge({ item }: { item: UnifiedAgendaItem }) {
   if (item.type === 'CADENCE') {
     return (
-      <span className="inline-flex items-center gap-1 text-[9px] font-black text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-100 dark:border-indigo-800/50 px-2 py-0.5 rounded-full uppercase tracking-widest">
+      <span className="inline-flex items-center gap-1 text-[9px] font-black text-gold-600 dark:text-gold-400 bg-gold-50 dark:bg-gold-950/30 border border-gold-100 dark:border-gold-800/50 px-2 py-0.5 rounded-full uppercase tracking-widest">
         ⚡ Cadência
       </span>
     );
@@ -77,7 +77,7 @@ function ChannelIcon({ item }: { item: UnifiedAgendaItem }) {
     const ch = item.currentStage?.channel;
     if (ch === 'LINKEDIN') return <LinkedinIcon className="w-6 h-6 text-blue-600" />;
     if (ch === 'WHATSAPP') return <span className="text-xl">💬</span>;
-    return <Mail className="w-6 h-6 text-indigo-600" />;
+    return <Mail className="w-6 h-6 text-gold-600" />;
   }
   return (
     <span className="text-xl">
@@ -278,7 +278,7 @@ export function AgendaList({
                   "w-14 h-14 rounded-2xl flex items-center justify-center border transition-colors",
                   isManual
                     ? "bg-violet-50 dark:bg-violet-950/40 border-violet-100 dark:border-violet-800 group-hover:border-violet-300 dark:group-hover:border-violet-600"
-                    : "bg-slate-50 dark:bg-slate-950 border-slate-100 dark:border-slate-800 group-hover:border-indigo-200 dark:group-hover:border-indigo-800"
+                    : "bg-slate-50 dark:bg-slate-950 border-slate-100 dark:border-slate-800 group-hover:border-gold-200 dark:group-hover:border-gold-800"
                 )}>
                   <ChannelIcon item={item} />
                 </div>
@@ -341,14 +341,14 @@ export function AgendaList({
                     <>
                       <button
                         onClick={(e) => handleEditLead(e, item)}
-                        className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-950 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:bg-indigo-950 transition-all min-w-[44px] min-h-[44px] flex items-center justify-center"
+                        className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-950 text-slate-400 hover:text-gold-600 hover:bg-gold-50 dark:hover:bg-gold-950 transition-all min-w-[44px] min-h-[44px] flex items-center justify-center"
                         title="Editar lead"
                       >
                         <Pencil className="w-5 h-5" />
                       </button>
                       <button
                         onClick={(e) => e.stopPropagation()}
-                        className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-950 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:bg-indigo-950 transition-all min-w-[44px] min-h-[44px] flex items-center justify-center"
+                        className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-950 text-slate-400 hover:text-gold-600 hover:bg-gold-50 dark:hover:bg-gold-950 transition-all min-w-[44px] min-h-[44px] flex items-center justify-center"
                       >
                         <PauseCircle className="w-5 h-5" />
                       </button>
@@ -360,7 +360,7 @@ export function AgendaList({
                     "flex items-center gap-2 pl-6 pr-4 py-3 rounded-2xl font-bold text-sm transition-all shadow-lg active:scale-95 group/btn",
                     isManual
                       ? "bg-violet-600 text-white hover:bg-violet-700 shadow-violet-100 dark:shadow-none"
-                      : "bg-indigo-600 text-white hover:bg-indigo-700 shadow-indigo-100 dark:shadow-none"
+                      : "bg-gold-600 text-white hover:bg-gold-700 shadow-gold-100 dark:shadow-none"
                   )}>
                     {isManual ? 'Executar' : 'Executar'}
                     <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
@@ -382,7 +382,7 @@ export function AgendaList({
           <button
             onClick={loadMoreLeads}
             disabled={isLoadingMore}
-            className="flex items-center gap-2 px-8 py-3 bg-white dark:bg-slate-900 border-2 border-dashed border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 font-bold rounded-2xl hover:border-indigo-500 hover:text-indigo-600 dark:hover:border-indigo-500 dark:hover:text-indigo-400 transition-all disabled:opacity-50"
+            className="flex items-center gap-2 px-8 py-3 bg-white dark:bg-slate-900 border-2 border-dashed border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 font-bold rounded-2xl hover:border-gold-500 hover:text-gold-600 dark:hover:border-gold-500 dark:hover:text-gold-400 transition-all disabled:opacity-50"
           >
             {isLoadingMore ? (
               <><Loader2 className="w-5 h-5 animate-spin" /> Carregando...</>

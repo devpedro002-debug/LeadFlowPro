@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'LimpaLeads - Gestão Inteligente de Leads',
+  title: 'LeadFlowPro - Gestão Inteligente de Leads',
   description: 'Plataforma de gestão de leads, templates e análise de conversão.',
 };
 

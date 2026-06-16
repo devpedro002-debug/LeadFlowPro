@@ -68,7 +68,7 @@ export const LEAD_SOURCE_MAP = {
  * Mapa de canais de template.
  */
 export const TEMPLATE_CHANNEL_MAP = {
-  EMAIL: { label: 'E-mail', color: 'bg-indigo-50 text-indigo-600' },
+  EMAIL: { label: 'E-mail', color: 'bg-gold-50 text-gold-600' },
   LINKEDIN: { label: 'LinkedIn', color: 'bg-blue-50 text-blue-600' },
   WHATSAPP: { label: 'WhatsApp', color: 'bg-emerald-50 text-emerald-600' },
 } as const;

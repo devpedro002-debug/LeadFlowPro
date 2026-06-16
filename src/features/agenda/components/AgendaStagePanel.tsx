@@ -23,7 +23,7 @@ const CHANNEL_ICONS: Record<string, React.ComponentType<{ className?: string }>>
 
 const CHANNEL_COLORS: Record<string, string> = {
   LINKEDIN: 'bg-blue-50 text-blue-600 dark:bg-blue-950/30 dark:text-blue-400',
-  EMAIL: 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950/30 dark:text-indigo-400',
+  EMAIL: 'bg-gold-50 text-gold-600 dark:bg-gold-950/30 dark:text-gold-400',
   WHATSAPP: 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/30 dark:text-emerald-400',
 };
 
@@ -54,8 +54,8 @@ export function AgendaStagePanel({ stages, totalActive, selectedStage, onStageCl
               className={`
                 flex-shrink-0 flex flex-col items-center gap-2 px-4 py-3 rounded-xl border min-w-[100px] transition-all
                 ${isSelected 
-                  ? 'bg-indigo-50 dark:bg-indigo-900/30 border-indigo-500 dark:border-indigo-500 shadow-lg shadow-indigo-500/20' 
-                  : 'bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-md cursor-pointer'
+                  ? 'bg-gold-50 dark:bg-gold-900/30 border-gold-500 dark:border-gold-500 shadow-lg shadow-gold-500/20' 
+                  : 'bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-700 hover:border-gold-300 dark:hover:border-gold-700 hover:shadow-md cursor-pointer'
                 }
               `}
             >

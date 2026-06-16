@@ -1,4 +1,18 @@
 @import "tailwindcss";
+
+@theme {
+  --color-gold-50: #FDF8EC;
+  --color-gold-100: #F9EEC9;
+  --color-gold-200: #F3E0A3;
+  --color-gold-300: #E8CE7A;
+  --color-gold-400: #DDBD58;
+  --color-gold-500: #C9A84C;  /* Primary gold */
+  --color-gold-600: #A8883C;
+  --color-gold-700: #8A6E30;
+  --color-gold-800: #6B5525;
+  --color-gold-900: #4D3E1A;
+  --color-gold-950: #2A2310;
+}
 @variant dark (&:where(.dark, .dark *));
 
 :root {

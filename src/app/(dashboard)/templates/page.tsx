@@ -17,7 +17,7 @@ const TemplatesClient = dynamic(
 );
 
 export const metadata = {
-  title: 'Templates – LimpaLeads',
+  title: 'Templates – LeadFlowPro',
   description: 'Mensagens padronizadas para LinkedIn e E-mail',
 };
 
@@ -29,7 +29,7 @@ export default async function TemplatesPage() {
       {/* Header */}
       <div>
         <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-          <div className="w-10 h-10 bg-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
+          <div className="w-10 h-10 bg-gold-600 rounded-2xl flex items-center justify-center shadow-lg shadow-gold-500/20">
             <FileText className="w-5 h-5 text-white" />
           </div>
           Templates
