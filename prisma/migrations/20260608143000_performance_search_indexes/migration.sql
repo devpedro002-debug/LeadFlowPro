@@ -33,16 +33,6 @@ CREATE INDEX IF NOT EXISTS "idx_leads_job_title_trgm"
 CREATE INDEX IF NOT EXISTS "idx_leads_phone_trgm"
   ON "leads" USING gin ("phone" gin_trgm_ops);
 
-CREATE INDEX IF NOT EXISTS "idx_lead_cadence_stage_queue"
-  ON "lead_cadence_progress" ("profile_id", "status", "current_stage_order", "next_scheduled_at", "version");
-
-CREATE INDEX IF NOT EXISTS "idx_lead_cadence_active_queue_partial"
-  ON "lead_cadence_progress" ("profile_id", "status", "next_scheduled_at", "current_stage_order", "version")
-  WHERE "finished_at" IS NULL;
-
-CREATE INDEX IF NOT EXISTS "idx_lead_cadence_cadence_status"
-  ON "lead_cadence_progress" ("cadence_id", "status");
-
 CREATE INDEX IF NOT EXISTS "idx_templates_profile_channel"
   ON "templates" ("profile_id", "channel");
 
